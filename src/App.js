@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Login from './components/login/Login';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Login from './components/Login/Login';
 
 function App() {
   return (
@@ -11,3 +11,4 @@ function App() {
     </BrowserRouter>
   );
 }
+export default App;
