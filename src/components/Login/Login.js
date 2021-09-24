@@ -1,44 +1,62 @@
 import React from 'react';
 import './Login.scss';
 import {
-  Container, FormControl, InputLabel, Input, FormHelperText, Button, Grid, Paper,
+  FormControl, InputLabel, Input, Button, Grid, Paper, InputAdornment, Avatar,
 } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import { AccountCircle } from '@material-ui/icons';
+import login from '../../assets/images/login.svg';
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    height: '60%',
-    marginTop: theme.spacing(10),
-    [theme.breakpoints.down(400 + theme.spacing(2) + 2)]: {
-      marginTop: 0,
-      width: '100%',
-      weidth: '100%',
-    },
-  },
-}));
 const Login = () => (
 
-  <Grid container className="login">
-    <Container component={Paper} elevation={5} midWith="xs">
-      <Grid item={12}>
-        <FormControl>
-          <InputLabel htmlFor="text">Username</InputLabel>
-          <Input id="username" type="text" aria-describedby="emailHelper" />
-          <FormHelperText id="emailHelper">Rol que desempeña</FormHelperText>
+  <section className="login">
+    <article className="login__image">
+      <img src={login} alt="login" width="600px" />
+    </article>
+    <article className="login__container">
+      <Paper elevation={5} className="login__content" align="center">
+        <Grid className="mg-30">
+          <Avatar><LockOutlinedIcon /></Avatar>
+          <h1 className="mg-0">APRENDE</h1>
+          <h3>Iniciar Sesión</h3>
+        </Grid>
+        <FormControl variant="standard" style={{ width: 270 }}>
+          <InputLabel htmlFor="username">
+            Usuario
+          </InputLabel>
+          <Input
+            id="username"
+            placeholder="Introduce tu usuario"
+            startAdornment={(
+              <InputAdornment position="start">
+                <AccountCircle />
+              </InputAdornment>
+          )}
+          />
         </FormControl>
-      </Grid>
-      <Grid item={12}>
-        <FormControl>
-          <InputLabel htmlFor="pwd">Password</InputLabel>
-          <Input id="password" type="password" aria-describedby="passwordHelper" />
-          <FormHelperText id="passwordHelper">Entre 8 y 16 caracteres</FormHelperText>
-        </FormControl>
-      </Grid>
-      <Grid item={12}>
-        <Button variant="contained">Iniciar sesiòn</Button>
-      </Grid>
-    </Container>
-  </Grid>
+        <Grid className="mg-24">
+          <FormControl style={{ width: 270 }}>
+            <InputLabel htmlFor="password">
+              Contraseña
+            </InputLabel>
+            <Input
+              id="password"
+              placeholder="Introduce tu contraseña"
+              fullwidth
+              startAdornment={(
+                <InputAdornment position="start">
+                  <AccountCircle />
+                </InputAdornment>
+          )}
+            />
+          </FormControl>
+        </Grid>
+        <Grid className="mg-58" style={{ width: 270 }}>
+          <Button style={{ padding: 12, width: 270 }} variant="contained">Iniciar sesiòn</Button>
+        </Grid>
+      </Paper>
+    </article>
+  </section>
 );
 
 export default Login;

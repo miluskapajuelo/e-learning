@@ -1,4 +1,50 @@
 .login{
-    height: 60%;
-    margin-top: 10;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    &__container{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        min-height: 100%;
+        overflow-y: auto;
+        background-color: rgb(255, 255, 255);
+    }
+    &__content{
+        padding: 20px;
+        height: 70vh;
+        width: 350px;
+        margin: 20px auto;
+    }
+    &__image{
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+    }
+}
+@mixin mg($x) {
+    margin-top: $x;
+  }
+.mg-0{
+    @include mg(0)
+}
+.mg-2{
+    @include mg(2)
+}
+.mg-30{
+    @include mg(30px)
+}
+.mg-24{
+    @include mg(24px)
+}
+.mg-58{
+    @include mg(58px)
 }
