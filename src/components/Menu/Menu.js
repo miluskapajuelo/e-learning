@@ -2,21 +2,27 @@ import React, { useState } from 'react';
 import './Menu.scss';
 import { Typography, Button } from '@material-ui/core';
 import { AddCircleOutline } from '@material-ui/icons';
+import { useHistory } from 'react-router-dom';
 import CardCourse from '../CardCourse/CardCourse';
 import Sidebar from '../Sidebar/Sidebar';
-
-/* const drawerWidth = 240; */
 
 const Menu = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
 
+  const history = useHistory();
+
   const onClickHandler = () => {
     setOpenSidebar(true);
   };
+
+  const createCourse = () => {
+    history.push('/create');
+  };
+
   return (
-    <section className="menu">
+    <section className="section">
       <article>
-        <div className="menu__header">
+        <div className="section__header">
           <div
             className="logo"
             role="button"
@@ -34,13 +40,13 @@ const Menu = () => {
               Cursos para dar tus primeros pasos
             </Typography>
           </div>
-          <Button variant="outlined" startIcon={<AddCircleOutline />} style={{ height: 45, marginRight: 5 }}>
+          <Button variant="outlined" startIcon={<AddCircleOutline />} onClick={createCourse} style={{ height: 45, marginRight: 5 }}>
             Crear curso
           </Button>
         </div>
         <Sidebar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
       </article>
-      <article className="menu__container">
+      <article className="section__container">
         <CardCourse />
         <CardCourse />
         <CardCourse />

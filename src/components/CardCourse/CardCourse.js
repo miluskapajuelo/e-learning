@@ -12,8 +12,8 @@ const CardCourse = () => {
     setValue(newValue);
   };
   return (
-    <section className="Card">
-      <Card sx={{ maxWidth: 345 }}>
+    <section>
+      <Card sx={{ maxWidth: 345, margin: 2 }}>
         <CardMedia
           component="img"
           alt="green iguana"
