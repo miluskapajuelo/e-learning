@@ -13,7 +13,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { AccountCircle } from '@material-ui/icons';
 import { useHistory } from 'react-router-dom';
 import login from '../../assets/images/login.svg';
-import getToken from '../../services/post';
+import getToken from '../../services/Axios/post';
 import { AlertSuccess, AlertError } from '../Alerts/Alert';
 
 const Login = () => {

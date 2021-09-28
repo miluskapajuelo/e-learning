@@ -5,6 +5,7 @@ import {
 import { Close } from '@material-ui/icons';
 import login from '../../assets/images/login.svg';
 import './ModalVideo.scss';
+import intro from './../../assets/video/welcome.mp4'
 
 const ModalVideo = () => {
   const [openPopup, setOpenPopup] = useState(true);
@@ -26,14 +27,18 @@ const ModalVideo = () => {
               position: 'absolute',
               right: 8,
               top: 8,
-              color: (theme) => theme.palette.grey[500],
+              color: '#C054F2',
             }}
           >
             <Close />
           </IconButton>
         </DialogTitle>
         <DialogContent>
-          <img src={login} alt="logo" />
+          <div>
+          <video width="600" height="340" autoplay>
+            <source src={intro} type="video/mp4"/>
+          </video>
+          </div>
         </DialogContent>
       </Dialog>
     </section>

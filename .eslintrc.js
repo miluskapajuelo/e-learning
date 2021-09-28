@@ -1,4 +1,4 @@
-module.exports = {
+/* module.exports = {
   env: {
     browser: true,
     es2021: true,
@@ -25,5 +25,6 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'no-underscore-dangle': 0,
     'max-len': 'off',
+    'import/extensions': ['error', 'ignorePackages', { js: 'never', jsx: 'never' }],
   },
-};
+}; */
