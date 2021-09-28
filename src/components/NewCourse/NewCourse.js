@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './NewCourse.scss';
 import {
   Typography,
@@ -31,6 +31,8 @@ const NewCourse = () => {
   const [state, setState] = useState(initialState);
   const [openError, setOpenError] = useState(false);
   const [openSuccess, setOpenSuccess] = useState(false);
+  const [data, setData]=useState({})
+  
 
   const {
     nombre, resumen, imagen, unidad, horas,
@@ -54,6 +56,13 @@ const NewCourse = () => {
       setState(initialState);
     }
   };
+  const getRole = () => {
+    const data = JSON.parse((localStorage.getItem('data')))
+    setData(data)
+  }
+  useEffect(() => {
+    getRole()
+  }, []);
 
   return (
     <section className="section">
@@ -65,14 +74,14 @@ const NewCourse = () => {
             className="section__menu"
             role="button"
             tabIndex={0}
-            onMouseDown={onClickHandler}
           >
             <Typography gutterBottom variant="h4" component="div">
               Crear curso
             </Typography>
           </div>
+          <div className="section__menu--button"><Button variant="outlined" onClick={onClickHandler}>Menú</Button></div>
         </div>
-        <Sidebar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
+        <Sidebar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} data={data}/>
       </article>
       <article>
         <Paper elevation={3} className="section__stepBox" align="center">
