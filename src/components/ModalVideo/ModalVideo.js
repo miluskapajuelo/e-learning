@@ -35,7 +35,7 @@ const ModalVideo = () => {
         </DialogTitle>
         <DialogContent>
           <div>
-          <video width="600" height="340" autoplay>
+          <video width="600" height="340" autoPlay>
             <source src={intro} type="video/mp4"/>
           </video>
           </div>
