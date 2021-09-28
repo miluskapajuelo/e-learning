@@ -30,10 +30,10 @@ const Login = () => {
     if (user !== '' || password !== '') {
       const resp = await getToken(account);
       if (resp.data.status === 200) {
-        const { token } = resp.data;
-        localStorage.setItem('token', token);
+        /* setOpenSuccess(true); */
+        localStorage.setItem('data', JSON.stringify(resp.data));
         history.push('/menu');
-        setOpenSuccess(true);
+        
       } else {
         setOpenError(true);
       }
@@ -47,7 +47,7 @@ const Login = () => {
       <Grid container spacing={4} className="login">
         <AlertError openError={openError} setOpenError={setOpenError} />
         <AlertSuccess openSuccess={openSuccess} setOpenSuccess={setOpenSuccess} />
-        <Grid item xs={1} md={7} className="login__image">
+        <Grid item md={7} className="login__image">
           <img src={login} alt="login" width="600px" />
         </Grid>
         <Grid item xs={12} md={5}>
@@ -105,7 +105,7 @@ const Login = () => {
                     variant="standard"
                   />
                   <Button
-                    style={{ padding: 12, width: 270, marginTop: 70 }}
+                    style={{ padding: 12, width: 226, marginTop: 70 }}
                     variant="contained"
                     onClick={handleSubmit}
                   >

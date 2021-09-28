@@ -8,6 +8,9 @@
         width: 350px;
         margin: 20px auto;
     }
+    &__image{
+        display: none;
+    }
     &__form{
         justify-content: center;
     }
@@ -29,4 +32,12 @@
 }
 .mg-58{
     @include mg(58px)
+}
+
+@media (min-width: 48rem){
+    .login{
+    &__image{
+        display: block;
+    }
+}
 }
