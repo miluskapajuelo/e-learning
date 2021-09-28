@@ -1,0 +1,10 @@
+.modal{
+    &__title{
+        text-align: center;
+}
+    &__content{
+        backdrop-filter: blur(2px);
+        background-color: white
+
+    }
+}
