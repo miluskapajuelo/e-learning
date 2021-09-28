@@ -76,7 +76,7 @@ const Menu = () => {
           </div>
           <div className="section__menu--burger">
             {isColaborador? (<div className="section__search"><InputBase className="section__search-input" onChange={(event) => handleSearch(event)}>
-            </InputBase ><div className="section__search-icon"><Search /></div></div>) : (<Button variant="outlined" startIcon={<AddCircleOutline />} onClick={createCourse} style={{ height: 45, marginRight: 5 }}>
+            </InputBase ><div className="section__search-icon"><Search /></div></div>) : (<Button variant="outlined" startIcon={<AddCircleOutline />} onClick={createCourse} style={{ height: 38, marginRight: 6 }}>
               Crear curso
             </Button>)}
             <div className="section__menu--button"><Button variant="outlined" onClick={onClickHandler}>Menú</Button></div>
