@@ -14,7 +14,7 @@ import {
 import { InsertPhoto, Menu } from '@material-ui/icons';
 import Sidebar from '../Sidebar/Sidebar';
 import CardCourse from '../CardCourse/CardCourse';
-import steps from '../../utils.js/functions';
+import steps from '../../utils/functions';
 import { addCourse } from '../../services/Firebase/functions';
 import { AlertSuccess, AlertError } from '../Alerts/Alert';
 
@@ -70,11 +70,6 @@ const NewCourse = () => {
             <Typography gutterBottom variant="h4" component="div">
               Crear curso
             </Typography>
-            <div className="section__menu--burger">
-              <Menu />
-              {' '}
-              <p>Menu</p>
-            </div>
           </div>
         </div>
         <Sidebar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
