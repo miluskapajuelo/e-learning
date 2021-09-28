@@ -7,7 +7,7 @@ import { onSnapshot } from 'firebase/firestore';
 import CardCourse from '../CardCourse/CardCourse';
 import ModalVideo from '../ModalVideo/ModalVideo';
 import Sidebar from '../Sidebar/Sidebar';
-import { queryCollection } from '../../firebase/functions';
+import { queryCollection } from '../../services/Firebase/functions';
 
 const Menu = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -42,12 +42,17 @@ const Menu = () => {
             onMouseDown={onClickHandler}
           >
             <Typography gutterBottom variant="h4" component="div">
-              Cursos
+              Mis cursos
               {openSidebar}
             </Typography>
             <Typography variant="body1" color="text.secondary">
               Cursos para dar tus primeros pasos
             </Typography>
+            <div className="section__menu--burger">
+              <Menu />
+              {' '}
+              <p>Menu</p>
+            </div>
           </div>
           <div className="section__menu--burger">
             <Button variant="outlined" startIcon={<AddCircleOutline />} onClick={createCourse} style={{ height: 45, marginRight: 5 }}>

@@ -16,7 +16,7 @@ const CardCourse = ({ course, state }) => {
     <section>
       { course !== undefined
         ? (
-          <Card sx={{ maxWidth: 345, margin: 2 }}>
+          <Card sx={{ maxWidth: 340, margin: 1, }}>
             <CardMedia
               component="img"
               alt="imagen"

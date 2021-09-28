@@ -15,7 +15,7 @@ import { InsertPhoto, Menu } from '@material-ui/icons';
 import Sidebar from '../Sidebar/Sidebar';
 import CardCourse from '../CardCourse/CardCourse';
 import steps from '../../utils.js/functions';
-import { addCourse } from '../../firebase/functions';
+import { addCourse } from '../../services/Firebase/functions';
 import { AlertSuccess, AlertError } from '../Alerts/Alert';
 
 const initialState = {

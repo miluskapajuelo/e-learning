@@ -4,11 +4,17 @@ import {
 } from '@material-ui/core';
 import { AccountCircle, ExitToApp } from '@material-ui/icons';
 import './Sidebar.scss';
+import { useHistory } from 'react-router-dom';
 
 const Sidebar = ({ openSidebar, setOpenSidebar }) => {
+  const history = useHistory();
   const closeMenu = () => {
     setOpenSidebar(false);
   };
+const logOut=() => {
+  history.push('/login');
+  localStorage.setItem('token', '')
+}
   return (
     <div className="sidebar">
       <SwipeableDrawer
@@ -31,7 +37,7 @@ const Sidebar = ({ openSidebar, setOpenSidebar }) => {
             </ListItem>
           ))}
         </List>
-        <div className="sidebar__logout">
+        <div className="sidebar__logout" onMouseDown={logOut}>
           <ExitToApp />
           Salir
         </div>

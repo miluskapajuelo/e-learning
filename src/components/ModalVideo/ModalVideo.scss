@@ -1,6 +1,9 @@
+@import './../../global.scss';
+
 .modal{
     &__title{
         text-align: center;
+        color: $secondary-color;
 }
     &__content{
         backdrop-filter: blur(2px);
