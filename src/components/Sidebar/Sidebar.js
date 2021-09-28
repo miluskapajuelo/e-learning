@@ -6,7 +6,7 @@ import { AccountCircle, ExitToApp } from '@material-ui/icons';
 import './Sidebar.scss';
 import { useHistory } from 'react-router-dom';
 
-const Sidebar = ({ openSidebar, setOpenSidebar }) => {
+const Sidebar = ({ openSidebar, setOpenSidebar, data }) => {
   const history = useHistory();
   const closeMenu = () => {
     setOpenSidebar(false);
@@ -26,6 +26,7 @@ const logOut=() => {
         <Box alignSelf="center" p={2}>
           <img src="https://www.grupokonecta.com/wp-content/uploads/2016/07/logo-konecta-pie.svg" alt="logo" />
         </Box>
+        <p align="center">{data.name}</p>
         <Divider />
         <List style={{ width: 250 }}>
           {['Mis cursos', 'Librería', 'Mi perfil'].map((text) => (
